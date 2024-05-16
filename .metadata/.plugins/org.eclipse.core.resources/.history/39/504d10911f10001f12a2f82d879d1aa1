@@ -1,0 +1,23 @@
+package com.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import com.data.CustomerDataEntity;
+
+
+@Repository
+@Component
+public interface RepositoryInterface extends JpaRepository<CustomerDataEntity, Integer>
+{
+	@Query("select distinct(plan_name) from citizen_plan_table")
+	public List<String> getByPlanName();
+	
+	@Query("select distinct(plan_status) from citizen_plan_table")
+	public List<String> getByPlanStatus();
+
+}

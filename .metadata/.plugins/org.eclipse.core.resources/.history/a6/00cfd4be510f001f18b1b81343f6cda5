@@ -1,0 +1,12 @@
+package com.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.cust.CustomerData;
+
+@org.springframework.stereotype.Repository
+public interface RepositoryInterface extends JpaRepository<CustomerData, String>
+{
+	
+
+}

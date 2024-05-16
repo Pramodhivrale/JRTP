@@ -1,0 +1,22 @@
+package com.main;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import com.main.*;
+@org.springframework.stereotype.Controller
+public class Controller 
+{
+	@GetMapping("/")
+	public String view()
+	{
+		return "index";
+	}
+	
+	@PostMapping("/user")
+	public String getdata(User user)
+	{
+		return null;
+		
+	}
+
+}

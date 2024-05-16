@@ -1,0 +1,27 @@
+package com.data;
+
+import java.util.Date;
+
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
+
+import com.cust.CustomerData;
+@Component
+public class Runners implements ApplicationRunner
+{
+	@Override
+	public void run(ApplicationArguments args) throws Exception 
+	{
+		CustomerData c=new CustomerData();
+		c.setPlaneName("Cash");
+		c.setPlanStatus("Approved");
+		c.setGender("Male");
+		c.setStartDate(new Date(1/1/2024));
+		c.setEndDate(new Date(1/6/2024));
+		
+		System.out.println("Application runner method called");
+		
+	}
+
+}

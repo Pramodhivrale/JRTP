@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plan Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .plan {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .plan h2 {
+            color: #007bff;
+            margin-top: 0;
+        }
+        .plan p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Plan Information</h1>
+        
+        <c:forEach var="plan" items="${plans}">
+            <div class="plan">
+                <h2>${plan.planName}</h2>
+                <p><strong>Status:</strong> ${plan.planStatus}</p>
+                <p><strong>Gender:</strong> ${plan.gender}</p>
+                <p><strong>Start Date:</strong> ${plan.planStartDate}</p>
+                <p><strong>End Date:</strong> ${plan.planEndDate}</p>
+            </div>
+        </c:forEach>
+    </div>
+</body>
+</html>

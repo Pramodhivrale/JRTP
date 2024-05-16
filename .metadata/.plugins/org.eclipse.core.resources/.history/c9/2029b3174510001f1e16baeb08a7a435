@@ -1,0 +1,127 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search</title>
+<!-- Bootstrap CSS -->
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	rel="stylesheet">
+<style>
+/* Custom CSS for enhanced design */
+.form-container {
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+}
+
+.form-group label {
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="form-container">
+			<h2 class="text-center mb-4">Search Plans</h2>
+			<form:form action="search" method="post" modelAttribute="searchForm">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="planName">Plan Name</label>
+							<form:select class="form-control" id="planName" path="planName">
+								<form:option value="">Select Plan Name</form:option>
+								<form:options items="${planNames}" />
+							</form:select>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="planStatus">Plan Status</label>
+							<form:select class="form-control" id="planStatus"
+								path="planStatus">
+								<form:option value="">Select Plan Status</form:option>
+								<form:options items="${planStatuses}" />
+							</form:select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="gender">Gender</label>
+					<form:select class="form-control" id="gender" path="gender">
+						<form:option value="">Select Gender</form:option>
+						<form:option value="Male">Male</form:option>
+						<form:option value="Female">Female</form:option>
+					</form:select>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="planStartDate">Plan Start Date</label>
+							<form:input type="date" class="form-control" id="planStartDate"
+								path="planStartDate" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="planEndDate">Plan End Date</label>
+							<form:input type="date" class="form-control" id="planEndDate"
+								path="planEndDate" />
+						</div>
+					</div>
+				</div>
+				<div class="text-center">
+					<!-- Center the Search button -->
+					<button type="submit" class="btn btn-primary">Search</button>
+				</div>
+
+			</form:form>
+			<hr>
+			<div class="container">
+				<h1>Plan Information</h1>
+
+				<c:forEach var="plan" items="${plans}">
+					<div class="plan">
+						<h2>${plan.planName}</h2>
+						<p>
+							<strong>Status:</strong> ${plan.planStatus}
+						</p>
+						<p>
+							<strong>Gender:</strong> ${plan.gender}
+						</p>
+						<p>
+							<strong>Start Date:</strong> ${plan.planStartDate}
+						</p>
+						<p>
+							<strong>End Date:</strong> ${plan.planEndDate}
+						</p>
+					</div>
+				</c:forEach>
+
+				<div class="row mt-2">
+					<div class="col-md-6">
+						<a href="/export/pdf" class="btn btn-info btn-block">Export as
+							PDF</a>
+					</div>
+					<div class="col-md-6">
+						<a href="/export/excel" class="btn btn-success btn-block">Export
+							as Excel</a>
+					</div>
+				</div>
+			</div>
+			<hr />
+		</div>
+	</div>
+	<!-- Bootstrap JS (Optional) - You can remove if not needed -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

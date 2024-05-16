@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: Inseurence-Report-Genration
+  datasource:
+    driver-class-name: org.h2.Driver
+    password: sa
+    url: ''
+    username: sa

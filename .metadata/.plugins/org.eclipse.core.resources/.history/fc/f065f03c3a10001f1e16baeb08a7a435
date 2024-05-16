@@ -1,0 +1,25 @@
+package com.data;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ControllerClass 
+{
+	@Autowired
+	private ServiceClass service;
+	
+	@GetMapping("/")
+	public String loadFrom(Model model)
+	{
+		model.addAttribute("searchForm", new SearchReqData());
+		model.addAttribute("planNames", service.getPlaneName());
+		model.addAttribute("planStatuses", service.getPlanStatus());
+		return"index";	
+		
+	}
+	
+
+}

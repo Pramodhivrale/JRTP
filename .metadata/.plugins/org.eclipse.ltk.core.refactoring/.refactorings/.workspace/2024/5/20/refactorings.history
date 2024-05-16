@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 0 elements to &apos;Inseurence-Report-Genration/src/main/java/com.data&apos;&#x0D;&#x0A;- Destination element: &apos;Inseurence-Report-Genration/src/main/java/com.data&apos;" description="Copy compilation units" destination="=Inseurence-Report-Genration/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.data" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1715491713023" units="0" version="1.0"/>
+</session>

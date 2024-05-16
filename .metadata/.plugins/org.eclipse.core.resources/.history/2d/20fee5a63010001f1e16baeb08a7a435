@@ -1,0 +1,16 @@
+package com.data;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ControllerClass 
+{
+	@GetMapping("/loadData")
+	public String loadFrom()
+	{
+		return"index";	
+		
+	}
+
+}

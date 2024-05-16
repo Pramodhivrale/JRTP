@@ -1,0 +1,99 @@
+package com.data;
+
+import java.util.List;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.stereotype.Service;
+
+import jakarta.servlet.http.HttpServletResponse;
+
+@Service
+public class ServiceClass implements ServiceInterface {
+
+	@Autowired
+	private RepositoryInterface repository;
+
+	@Override
+	public List<String> getPlaneName() {
+		List<String> planName = repository.getByPlanName();
+		return planName;
+	}
+
+	@Override
+	public List<String> getPlanStatus() {
+		return repository.getByPlanStatus();
+	}
+
+	@SuppressWarnings("unlikely-arg-type")
+	@Override
+	public List<CustomerDataEntity> getSearchData(SearchReqData searchReqData) {
+		System.out.println(searchReqData);
+		CustomerDataEntity cEntity = new CustomerDataEntity();
+		
+		if (null != searchReqData.getPlanName() && !"".equals(searchReqData.getPlanName())) {
+
+			cEntity.setPlanName(searchReqData.getPlanName());
+		}
+		if (null != searchReqData.getPlanStatus() && !"".equals(searchReqData.getPlanStatus())) {
+			cEntity.setPlanStatus(searchReqData.getPlanStatus());
+		}
+		if (null != searchReqData.getGender() && !"".equals(searchReqData.getGender())) {
+			cEntity.setGender(searchReqData.getGender());
+		}
+		if(null != searchReqData.getPlanStartDate() && !"".equals(searchReqData.getPlanStartDate()))
+		{
+			cEntity.setPlanStartDate(searchReqData.getPlanStartDate());
+		}
+		if(null != searchReqData.getPlanEndDate() && !"".equals(searchReqData.getPlanEndDate())) {
+			cEntity.setPlanEndDate(searchReqData.getPlanEndDate());
+		}
+		
+		return repository.findAll(Example.of(cEntity));
+	}
+
+	@Override
+	public boolean getExcel(HttpServletResponse response) 
+	{
+		
+		Workbook workbook =new HSSFWorkbook();
+		Sheet sheet = workbook.createSheet();
+		Row row = sheet.createRow(0);
+		
+		row.createCell(0).setCellValue("ID");
+		row.createCell(1).setCellValue("CITIZEN-NAME");
+		row.createCell(2).setCellValue("PLAN-NAME");
+		row.createCell(3).setCellValue("PLAN-STATUS");
+		row.createCell(4).setCellValue("PLAN START DATE");
+		row.createCell(5).setCellValue("PLAN END DATE");
+		row.createCell(6).setCellValue("BENIFICRY AMOUNT");
+		
+		List<CustomerDataEntity> all = repository.findAll();
+		
+		for(CustomerDataEntity plans:all)
+		{
+			Row row2 = sheet.createRow(0);
+			
+			row2.createCell(0).setCellValue(plans.getCitizenId());
+			row2.createCell(1).setCellValue(plans.getCitizenId());
+			row2.createCell(2).setCellValue(plans.getCitizenId());
+			row2.createCell(3).setCellValue(plans.getCitizenId());
+			row2.createCell(4).setCellValue(plans.getCitizenId());
+			row2.createCell(5).setCellValue(plans.getCitizenId());
+			row2.createCell(6).setCellValue(plans.getCitizenId());
+			
+		}
+		return false;
+	}
+
+	@Override
+	public boolean getpdf() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,35 @@
+package com.data;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@Controller
+public class ControllerClass 
+{
+	@Autowired
+	private RepositoryInterface repo;
+
+	 @GetMapping("/searchForm")
+	    public String loadSearchForm(Model model) {
+	        model.addAttribute("customerData", new CustomerDataEntity());
+	        return "index"; // Return the name of your Thymeleaf template
+	    }
+	 
+	 @PostMapping("/search")
+	 public String getData(ResponseData responseData)
+	 {
+		System.out.println(responseData);
+		
+		return "Done";
+	 }
+}

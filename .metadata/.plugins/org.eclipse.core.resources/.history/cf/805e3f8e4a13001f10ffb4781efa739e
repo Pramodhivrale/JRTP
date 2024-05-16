@@ -1,0 +1,115 @@
+package com.data;
+
+import java.util.List;
+
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.stereotype.Service;
+
+import com.lowagie.text.Document;
+import com.lowagie.text.PageSize;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
+
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.HttpServletResponse;
+
+@Service
+public class ServiceClass implements ServiceInterface{
+
+	@Autowired
+	private RepositoryInterface repo;
+	
+	@Autowired
+	private ExcelUtility email;
+	
+	@Override
+	public List<String> getPlanNames() 
+	{
+		List<String> planNames = repo.getPlanNames();
+		return planNames;
+	}
+
+	@Override
+	public List<String> getPlanStatus() {
+		List<String> planStatus = repo.getPlanStatus();
+		return planStatus;
+	}
+
+	@Override
+	public List<EntityClass> getAllData(SearchReqData searchReqData) {
+	
+		EntityClass entity=new EntityClass();
+		 
+		if (null != searchReqData.getPlanName() && !"".equals(searchReqData.getPlanName())) {
+
+			entity.setPlanName(searchReqData.getPlanName());
+		}
+		if (null != searchReqData.getPlanStatus() && !"".equals(searchReqData.getPlanStatus())) {
+			entity.setPlanStatus(searchReqData.getPlanStatus());
+		}
+		if (null != searchReqData.getGender() && !"".equals(searchReqData.getGender())) {
+			entity.setGender(searchReqData.getGender());
+		}
+		if(null != searchReqData.getPlanStartDate() && !"".equals(searchReqData.getPlanStartDate()))
+		{
+			entity.setPlanStartDate(searchReqData.getPlanStartDate());
+		}
+		if(null != searchReqData.getPlanEndDate() && !"".equals(searchReqData.getPlanEndDate())) {
+			entity.setPlanEndDate(searchReqData.getPlanEndDate());
+		}
+		return repo.findAll(Example.of(entity));
+	}
+
+	@Override
+	public boolean getPdf(HttpServletResponse response) throws Exception{
+        Document document=new Document(PageSize.A4);
+		
+		PdfWriter.getInstance(document, response.getOutputStream());
+		
+		document.open();
+		
+		Paragraph p=new Paragraph("Citizen plan info");
+		document.add(p);
+		PdfPTable table=new PdfPTable(6);
+		table.addCell("Id");
+		table.addCell("Citizen-name");
+		table.addCell("Plane-name");
+		table.addCell("plane-status");
+		table.addCell("plan-start-date");
+		table.addCell("plane-end-date");
+		
+		List<EntityClass> all = repo.findAll();
+		
+		for(EntityClass plan : all) {
+			table.addCell(String.valueOf(plan.getCitizenId()));
+			table.addCell(plan.getCitizenName());
+			table.addCell(plan.getPlanName());
+			table.addCell(plan.getPlanStatus());
+			table.addCell(plan.getPlanStartDate()+"");
+			table.addCell(plan.getPlanEndDate()+"");
+			
+		}
+		document.add(table);
+		
+		return false;
+	}
+
+	@Override
+	public boolean getExcel(HttpServletResponse response)  throws Exception
+	{
+		 List<EntityClass> all = repo.findAll();
+		 email.genreateExcel(response,all);
+		 
+	    
+		return true;
+		
+	}
+
+}

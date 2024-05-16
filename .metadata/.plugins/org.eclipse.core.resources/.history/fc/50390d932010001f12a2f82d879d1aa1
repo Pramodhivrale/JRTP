@@ -1,0 +1,21 @@
+package com.repo;
+
+import java.util.List;
+
+import com.data.CustomerDataEntity;
+import com.data.SearchReqData;
+
+public interface ServiceInterface 
+{
+	public List<String> getPlaneName();
+	
+	public List<String> getPlanStatus();
+	
+	public List<CustomerDataEntity> getSearchData(SearchReqData searchReqData);
+	
+	public boolean getExcel();
+	
+	public boolean getpdf();
+	
+
+}
