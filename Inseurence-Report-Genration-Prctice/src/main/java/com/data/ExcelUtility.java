@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ExcelUtility 
 {
 
-	public boolean genreateExcel(HttpServletResponse response,List<EntityClass> all,File f) throws Exception
+	public boolean genreateExcel(HttpServletResponse response,List<EntityClass> all,File file) throws Exception
 	{
 		Workbook workbook =new HSSFWorkbook();
 		Sheet sheet = workbook.createSheet("plans-data");
@@ -66,7 +66,7 @@ public class ExcelUtility
 			
 	    }
 	    
-	    FileOutputStream fileOutputStream=new FileOutputStream(new File("plans.xls"));
+	    FileOutputStream fileOutputStream=new FileOutputStream(file);
 		workbook.write(fileOutputStream);
 		fileOutputStream.close();
 		
