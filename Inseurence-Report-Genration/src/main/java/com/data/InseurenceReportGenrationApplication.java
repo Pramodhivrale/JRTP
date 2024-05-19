@@ -2,11 +2,15 @@ package com.data;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.data","com.controller","com.repo","com.runners","com.service"})
+@EnableJpaRepositories(basePackages = "com.repo")
+@ComponentScan(basePackages = {"com.*"})
+@EntityScan(basePackages = "com.entity")
 public class InseurenceReportGenrationApplication {
 
 	

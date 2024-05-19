@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
+    />
+    <title>view-enquery</title>
+    <style>
+        select{
+            width: 250px;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <div>
+        <h3 style="text-align: center;">View Student Enquiries</h3>
+        <div class="d-flex justify-content-center p-4 ">
+           <div class="me-2 w-25">
+              <dl class="p-3">
+                 <dt>Course</dt>
+                 <dd>
+                    <select class="form-select ">
+            
+                       <option value="java" selected>Java FullStack</option>
+                       <option value="ui">UI Development</option>
+                       <option value="devops">DevOps</option>
+                       <option value="aws">AWS</option>
+                    </select>
+                 </dd>
+              </dl>
+           </div>
+           <div class="me-2 w-25">
+              <dl class="p-3">
+                 <dt>Enquiry Status</dt>
+                 <dd>
+                    <select class="form-select ">
+                       <option value="new" selected>New</option>
+                       <option value="enrolled">Enrolled</option>
+                       <option value="out">Out</option>
+                    </select>
+                 </dd>
+              </dl>
+           </div>
+           <div class="me-2 w-25">
+              <dl class="p-3">
+                 <dt>Class Mode</dt>
+                 <dd>
+                    <select class="form-select">
+                       <option value="online" selected>Online</option>
+                       <option value="offline">Offline</option>
+                    </select>
+                 </dd>
+              </dl>
+           </div>
+        </div>
+     </div>
+     <div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Number</th>
+                <th>Enquiry Date</th>
+                <th>Status</th>
+                <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>d</td>
+                </tr>
+            </tbody>
+        </table>
+     </div>
+    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- Bootstrap Bundle JS -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

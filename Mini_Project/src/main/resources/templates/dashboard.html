@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
+    />
+    <style>
+        .navbar-nav {
+          justify-content: space-evenly;
+        }
+        #navbar {
+          height: 80px;
+          border-radius: 5px;
+        }
+        .seconddiv {
+            background-color: #f1ebeb;
+            width: 60rem;
+            height: 28rem;
+            position: relative;
+            top: 50px;
+            left: 10rem;
+            color: black;
+        }
+        h4 {
+            padding: 50px;
+        }
+        .innerdiv {
+            padding: 50px;
+        }
+        .innerdiv label {
+            font-size: 25px;
+        }
+        .innerdiv-2 {
+           position: relative;
+           bottom: 15rem;
+           left: 30rem;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-2" id="navbar">
+        <div class="container-fluid">
+          <a href="#" class="navbar-brand">ASHOK IT</a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="#" class="nav-link">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a href="enquiry" class="nav-link">Add Enquiry</a>
+              </li>
+              <li class="nav-item">
+                <a href="enquaries" class="nav-link">View Enquiries</a>
+              </li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-danger me-3">
+            LOGOUT
+          </a>
+        </div>
+      </nav>
+      <div class="seconddiv">
+           <h4>Your performance</h4>
+           <div class="innerdiv">
+            <label>Total Enquiries : 256</label>
+            <br>
+            <label class="text-primary">Enrolled : 84</label>
+            <br>
+            <label class="text-danger">Lost : 172</label>
+           </div>
+           <div class="innerdiv-2">
+              <img src="images/Ladei.png" width="200px" height="80px" alt="" class="img-fluid">
+           </div>
+      </div>
+      <!-- jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- Bootstrap Bundle JS -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
