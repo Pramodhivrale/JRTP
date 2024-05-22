@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,20 +78,22 @@
         h6 {
             padding: 20px;
         }
-        .account{
-        padding: 20px;
+        .account {
+            padding: 20px;
         }
     </style>
-    <title>Create Account</title>
+    <title>Recover Password</title>
 </head>
 <body class="container-fluid">
     <div id="main">
         <div class="split left">
             <div class="centered form-container">
-                <h3 id="headline">Recover your password</h3>
-                <form>
+                <h3>Recover your password</h3>
+                <p th:text="${succ}" class="text-success"></p>
+                <h4 th:text="${msg}" class="text-success"></h4>
+                <form th:action="@{/recoverpwd}" method="post" th:object="${user}">
                     <div class="form-group">
-                        <input type="email" id="email-input" class="form-control" placeholder="" aria-label="Email">
+                        <input type="email" id="email-input" class="form-control" th:field="*{email}" placeholder=" " aria-label="Email" required>
                         <label for="email-input" class="form-label">Email</label>
                     </div>
                     <button type="submit" class="btn btn-danger">
@@ -100,7 +102,7 @@
                 </form>
                 <div class="account">
                     <span>Don't have an account?</span>
-                    <a href="signup"><button id="lastbutton" class="btn btn-secondary btn-sm">CREATE NEW</button></a>
+                    <a th:href="@{/signup}"><button id="lastbutton" class="btn btn-secondary btn-sm">CREATE NEW</button></a>
                 </div>
             </div>
         </div>
@@ -114,14 +116,5 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.getElementById('email-input').addEventListener('focus', function() {
-            document.getElementById('headline').textContent = 'Email';
-        });
-        document.getElementById('email-input').addEventListener('input', function() {
-            let emailValue = this.value.trim();
-            document.getElementById('headline').textContent = emailValue ? emailValue : 'Recover your password';
-        });
-    </script>
 </body>
 </html>

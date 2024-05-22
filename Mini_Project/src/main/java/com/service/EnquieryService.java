@@ -13,7 +13,7 @@ public interface EnquieryService
 	
 	public DashBoardResponse getDashBoardResponse(Integer id);
 	
-	public String addEnquiery(EnquiryForm form);
+	public String upseartEnquiery(EnquiryForm form);
 	
 	public List<EnquiryForm> getEnquries();
 	
