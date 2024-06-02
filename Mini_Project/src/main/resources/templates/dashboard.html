@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="#" class="nav-link">HOME</a>
+                <a href="index" class="nav-link">HOME</a>
               </li>
               <li class="nav-item">
                 <a href="enquiry" class="nav-link">Add Enquiry</a>
@@ -64,7 +64,7 @@
               </li>
             </ul>
           </div>
-          <a href="#" class="btn btn-danger me-3">
+          <a href="logout" class="btn btn-danger me-3">
             LOGOUT
           </a>
         </div>
@@ -72,14 +72,14 @@
       <div class="seconddiv">
            <h4>Your performance</h4>
            <div class="innerdiv">
-            <label>Total Enquiries : 256</label>
+            <label>Total Enquiries: <span th:text="${response.totalEnqcnt}">256</span></label>
             <br>
-            <label class="text-primary">Enrolled : 84</label>
+            <label class="text-primary">Enrolled: <span th:text="${response.enrollCnt}">84</span></label>
             <br>
-            <label class="text-danger">Lost : 172</label>
+            <label class="text-danger">Lost: <span th:text="${response.lostcnt}">172</span></label>
            </div>
            <div class="innerdiv-2">
-              <img src="images/Ladei.png" width="200px" height="80px" alt="" class="img-fluid">
+              <img src="images/Ladei.png" width="200px" height="80px" alt="Performance Image" class="img-fluid">
            </div>
       </div>
       <!-- jQuery -->

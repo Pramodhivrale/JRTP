@@ -27,7 +27,7 @@ public class UserController {
 
 	@PostMapping("/signup")
 	public String addSignUpdata(@ModelAttribute("user") SignupForm form, Model model) {
-		Boolean flagvalue = userServiceImpl.signUp(form);
+		boolean flagvalue = userServiceImpl.signUp(form);
 		System.out.println(flagvalue);
 		if (flagvalue) {
 			model.addAttribute("succ", "Signup successful!");

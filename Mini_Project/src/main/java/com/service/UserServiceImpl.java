@@ -12,6 +12,8 @@ import com.request.SignupForm;
 import com.request.UnlockForm;
 import com.utility.*;
 
+import jakarta.servlet.http.HttpSession;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -20,6 +22,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private EmailUtil emailUtils;
+	
+	@Autowired
+	private HttpSession httpSession;
 
 	@Override
 	public String login(LoginForm form) 
@@ -34,12 +39,15 @@ public class UserServiceImpl implements UserService {
 			return "Your account is locked ! Please unlock your account";
 			
 		}
+		// Create session and store user data
 		
+		httpSession.setAttribute("UserID", byEmailAndPwd.getUserId());
+//		System.out.println(byEmailAndPwd.getUserId());
 		return "Succesfully loged in";
 	}
 
 	@Override
-	public Boolean signUp(SignupForm form) {
+	public boolean signUp(SignupForm form) {
 
 		UserDtlsEntity userDtlsEntity = userDetailsRepo.findByEmail(form.getEmail());
 		if (userDtlsEntity != null) {
@@ -83,6 +91,7 @@ public class UserServiceImpl implements UserService {
 		else {
 			return "Your password is incorrect";
 		}
+		
 		
 	}
 

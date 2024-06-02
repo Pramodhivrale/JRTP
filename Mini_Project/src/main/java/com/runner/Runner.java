@@ -35,17 +35,19 @@ public class Runner implements ApplicationRunner{
 		
 		course.setCourses(c);
 		courseListRepo.save(course);
+		System.out.println("Courses updated");
 		
 		
 		EnqStatusEntity e=new EnqStatusEntity();
 		
 		List<String> list=new ArrayList<>();
-		list.add("New");
-		list.add("Enrolled");
-		list.add("Out");
+		list.add("NEW");
+		list.add("ENROLLED");
+		list.add("LOST");
 		
 		e.setEnqStatus(list);
 		enqstatusRepo.save(e);
+		System.out.println("Status updated");
 		
 		
 		

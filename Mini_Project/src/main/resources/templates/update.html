@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update Enquiry</title>
+<!-- Bootstrap CSS CDN -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<!-- Bootstrap Icons -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" />
+<style>
+.navbar-nav {
+	justify-content: space-evenly;
+}
+
+#navbar {
+	height: 80px;
+	border-radius: 5px;
+}
+
+.content-container {
+	background-color: #f1ebeb;
+	border-radius: 5px;
+	margin-top: 50px;
+	padding: 20px;
+}
+
+.image-container img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+</style>
+</head>
+<body class="container-fluid">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-2"
+		id="navbar">
+		<div class="container-fluid">
+			<a href="#" class="navbar-brand">ASHOK IT</a>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a th:href="@{/}" class="nav-link">HOME</a></li>
+					<li class="nav-item"><a th:href="@{/enquiry}" class="nav-link">Add
+							Enquiry</a></li>
+					<li class="nav-item"><a th:href="@{/enquaries}" class="nav-link">View
+							Enquiries</a></li>
+				</ul>
+			</div>
+			<button class="btn btn-danger">
+				<a th:href="@{/logout}" class="text-white">LOGOUT</a>
+			</button>
+		</div>
+	</nav>
+	<div class="container content-container">
+		<div class="row">
+			<div th:if="${msg}" class="alert alert-success" role="alert">
+				Record Updated</div>
+			<div class="col-md-6 form-container">
+				<h4>Update student enquiry here</h4>
+				<div th:if="${msg}" class="alert alert-success"
+					role="alert">Data Updated successfully!
+				</div>
+				<form th:action="@{/update/{id}(id=${id})}" th:object="${form}"
+					method="post">
+					<div class="mb-3">
+						<label for="student-name" class="form-label">Student Name</label>
+						<input type="text" class="form-control" id="student-name"
+							th:field="*{studentName}" placeholder="Student name">
+					</div>
+					<div class="mb-3">
+						<label for="contact-number" class="form-label">Contact
+							Number</label> <input type="number" class="form-control"
+							id="contact-number" th:field="*{contactNo}"
+							placeholder="Contact number">
+					</div>
+					<div class="mb-3">
+						<label for="class-mode" class="form-label">Class Mode</label> <select
+							class="form-select" id="class-mode" th:field="*{classMode}">
+							<option value="" disabled selected>-Select-</option>
+							<option th:each="mode : ${classModes}" th:value="${mode}"
+								th:text="${mode}"></option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="course" class="form-label">Course</label> <select
+							class="form-select" id="course" th:field="*{courseName}">
+							<option value="" disabled selected>-Select-</option>
+							<option th:each="course : ${courses}" th:value="${course}"
+								th:text="${course}"></option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="enquiry-status" class="form-label">Enquiry
+							Status</label> <select class="form-select" id="enquiry-status"
+							th:field="*{enqStatus}">
+							<option value="" disabled selected>-Select-</option>
+							<option th:each="status : ${statuses}" th:value="${status}"
+								th:text="${status}"></option>
+						</select>
+					</div>
+					<button type="submit" class="btn btn-primary">Update</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Bootstrap JS and Popper.js CDN -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
