@@ -4,6 +4,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.constants.AppConst;
 import com.entity.UserDtlsEntity;
 import com.repo.UserDetailsRepo;
 import com.request.ForgotPassForm;
@@ -67,7 +68,7 @@ public class UserServiceImpl implements UserService {
 
 		// TODO : Send that random password to user via emial
 		String to = form.getEmail();
-		String subject = "Unlock your account";
+		String subject = AppConst.SUBJECT;
 		StringBuffer body = new StringBuffer("");
 		body.append("<h1>Use below temp password to unlock your account</h1>");
 		body.append("Temporary pwd : " + tempPwd);

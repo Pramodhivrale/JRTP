@@ -66,7 +66,6 @@ public class UserController {
 
 	@GetMapping("/unlock")
 	public String unlockPage(@RequestParam String email, Model model) {
-		// System.out.println(email);
 		UnlockForm unlock = new UnlockForm();
 		unlock.setEmail(email);
 		model.addAttribute("unlockForm", unlock);

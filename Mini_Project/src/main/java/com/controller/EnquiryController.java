@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.entity.StudentEnqEntity;
-import com.repo.StudentEnqRepo;
 import com.request.EnquiryForm;
 import com.request.UpdateForm;
 import com.response.DashBoardResponse;

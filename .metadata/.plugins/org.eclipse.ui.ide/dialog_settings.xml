@@ -42,6 +42,13 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\42_Spring_Security_OAuth2.0_App"/>
+			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\41_Spring_Security_JDBC_Auth_App"/>
+			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\30_SB_REST_HATEOS"/>
+			<item value="C:\SpringBoot"/>
+			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\28_SB_Data_REST_App"/>
+			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\26_SB_REST_MakeMyTrip_App"/>
+			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\27_SB_REST_Async_Client_App"/>
 			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\25_SB_REST_ERAIL_API"/>
 			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\21_WebMVC_ExceptionApp"/>
 			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\20_WebMVC_InterceptorApp"/>
@@ -66,9 +73,10 @@
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.springsource.ide.eclipse.commons.gettingstarted.wizard.boot.NewSpringBootWizard"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.springsource.ide.eclipse.boot.wizards.category"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jst.j2ee.internal"/>
 		</list>
 		<section name="NewWizard.dialogBounds">
 		</section>

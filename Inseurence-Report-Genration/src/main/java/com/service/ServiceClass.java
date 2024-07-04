@@ -2,16 +2,18 @@ package com.service;
 
 
 import java.io.File;
-import com.service.*;
-import com.entity.CustomerDataEntity;
-import com.repo.*;
-import com.req.SearchReqData;
-import com.utility.*;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
+
+import com.entity.CustomerDataEntity;
+import com.repo.RepositoryInterface;
+import com.req.SearchReqData;
+import com.utility.EmailUtils;
+import com.utility.ExcelGenretor;
+import com.utility.PdfGenretor;
 
 import jakarta.servlet.http.HttpServletResponse;
 

@@ -1,0 +1,4 @@
+app:
+  messages:
+    greetMsg: hello !
+    welcomeMsg: Welcome !
