@@ -20,7 +20,7 @@ public class DC_PLAN_SELECTION
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "planId")
-	private Plans plans;
+	private PlansEntity plans;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "caseNo")

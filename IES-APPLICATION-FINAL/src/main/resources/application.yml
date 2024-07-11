@@ -9,8 +9,22 @@ spring:
     username: root
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: hivralepramod4@gmail.com
+    password: ceav fwpu awgl ixza
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+   
+            
+            

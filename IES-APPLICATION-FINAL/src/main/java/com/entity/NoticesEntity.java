@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class CO_NOTICES {
+public class NoticesEntity {
 
 	@Id
 	private Long notice_id;
@@ -23,7 +23,7 @@ public class CO_NOTICES {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="ed_trace_i")
-	private ED_ELG_DTLS eligiblityDtls;
+	private planEligiblity eligiblityDtls;
 	
 	@Lob
 	private byte[] co_pdf;

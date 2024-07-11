@@ -1,0 +1,17 @@
+Hi ${FNAME},<br/>
+<br/>
+
+Welcome to the IES family. Your registration is almost completed.<br/>
+<br/>
+
+Please unlock your account using the details below.<br/>
+<br/>
+
+Temporary Password: ${TEMP_PWD} <br/>
+<br/>
+
+<a href="http://localhost:8080/unlockAccount?email=${EMAIL}">Click here to unlock</a> <br/>
+<br/>
+
+Thanks,<br/>
+Rhode Island Gov.<br/>

@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class DC_EDUCATION 
+public class EdcutionEntity 
 {
 	@Id
 	private Integer educationId;

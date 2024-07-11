@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class DC_INCOME 
+public class IncomeEntity 
 {
 	
 	@Id

@@ -41,11 +41,11 @@ public class CitizenDetails
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "userId")
-	private IesUser iesUser;
+	private IesUserEntity iesUser;
 	
 	@OneToOne()
 	@JoinColumn(name = "planId")
-	private Plans plans;
+	private PlansEntity plans;
 	
 	@CreationTimestamp
 	private String createdDate;

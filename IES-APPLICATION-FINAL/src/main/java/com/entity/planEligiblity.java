@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class ED_ELG_DTLS {
+public class planEligiblity {
 	
 	@Id
 	private Long ed_trace_i;
