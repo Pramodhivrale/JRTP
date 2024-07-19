@@ -24,6 +24,7 @@ import com.service.AdminServiceImplementation;
 public class AdminController {
 	
 	
+	
 	@Autowired
 	private AdminServiceImplementation adminService;
 	
@@ -34,7 +35,7 @@ public class AdminController {
 	public String getCaseWorker(@org.springframework.web.bind.annotation.RequestBody IesBinding iesUser) {
 
 		Boolean flag = adminService.addCaseWorker(iesUser);
-		if (flag == true) {
+		if (flag) {
 			//return "User Account is created! please check your email to unlock or update your password to login";
 			return props.getMessage().get(AppConstants.account_created);
 		} else {

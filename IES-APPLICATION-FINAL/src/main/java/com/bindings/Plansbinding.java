@@ -13,11 +13,4 @@ public class Plansbinding
 	private String planCategory;
 
 	private String activeSwitch;
-
-//	@ManyToOne(cascade = CascadeType.ALL)
-//	@JoinColumn(name = "userId")
-//	private IesUserEntity iesUser;
-
-
-
 }

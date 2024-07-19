@@ -28,12 +28,7 @@ public class IesBinding {
 	@JsonProperty("userSsn")
 	private Long userSsn;
 
-	// 1-admin
-	// 2-Case worker
+	
 	@JsonProperty("userRole")
 	private Integer userRole;
-
-//	@OneToMany(cascade = CascadeType.ALL,mappedBy = "iesUser")
-//	private List<Plans> plans;
-
 }

@@ -42,6 +42,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\SpringBootCodes\spring-boot-mysql-docker-compose"/>
 			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\42_Spring_Security_OAuth2.0_App"/>
 			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\41_Spring_Security_JDBC_Auth_App"/>
 			<item value="C:\Spring Boot Ashok Sir\27 SBMS Notes &amp; Workspace Examples Ashok IT\workspace\30_SB_REST_HATEOS"/>
@@ -73,10 +74,9 @@
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.m2e.core.wizards.Maven2ProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.jdt.ui.java"/>
-			<item value="org.eclipse.jst.j2ee.internal"/>
+			<item value="org.eclipse.m2e"/>
 		</list>
 		<section name="NewWizard.dialogBounds">
 		</section>

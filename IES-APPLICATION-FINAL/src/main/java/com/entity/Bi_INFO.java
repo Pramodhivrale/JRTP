@@ -18,7 +18,7 @@ public class Bi_INFO {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "caseNo")
-	private CitizenDetails citizenDetails;
+	private ArEntity citizenDetails;
 	
 	private LocalDate benefit_month_year;
 	

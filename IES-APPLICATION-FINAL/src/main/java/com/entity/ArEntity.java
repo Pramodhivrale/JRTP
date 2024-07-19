@@ -3,18 +3,19 @@ package com.entity;
 import java.time.LocalDate;
 
 import org.hibernate.annotations.CreationTimestamp;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
 @Entity
-public class CitizenDetails 
+@Table(name = "citizen_data")
+public class ArEntity 
 {
 	@Id
 	private Long caseNo;
@@ -49,7 +50,5 @@ public class CitizenDetails
 	
 	@CreationTimestamp
 	private String createdDate;
-	
-
 
 }

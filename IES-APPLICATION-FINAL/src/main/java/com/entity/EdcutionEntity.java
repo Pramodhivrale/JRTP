@@ -23,7 +23,7 @@ public class EdcutionEntity
 	
 	@OneToOne
 	@JoinColumn(name = "caseNo")
-	private CitizenDetails citizenDetails;
+	private ArEntity citizenDetails;
 	
 //	 education_id		PK
 //	   highest_degree

@@ -18,10 +18,4 @@ public class PasswordGenerator {
         }
         return password.toString();
     }
-
-//    public static void main(String[] args) {
-//        int length = 8; // Password length
-//        String password = generatePassword(length);
-//        System.out.println("Generated Password: " + password);
-//    }
 }

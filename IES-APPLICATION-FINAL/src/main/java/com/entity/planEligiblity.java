@@ -17,7 +17,7 @@ public class planEligiblity {
 	
 	@OneToOne
 	@JoinColumn(name = "caseNo")
-	private CitizenDetails citizenDetails;
+	private ArEntity citizenDetails;
 	
 	private String plan_name;
 	

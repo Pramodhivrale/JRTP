@@ -23,7 +23,7 @@ public class IncomeEntity
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "caseNo")
-	private CitizenDetails citizenDetails;
+	private ArEntity citizenDetails;
 
 
 }

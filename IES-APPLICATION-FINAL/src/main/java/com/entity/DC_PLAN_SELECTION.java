@@ -24,6 +24,6 @@ public class DC_PLAN_SELECTION
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "caseNo")
-	private CitizenDetails citizenDetails;
+	private ArEntity citizenDetails;
 
 }

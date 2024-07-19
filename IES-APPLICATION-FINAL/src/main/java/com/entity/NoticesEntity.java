@@ -19,7 +19,7 @@ public class NoticesEntity {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "caseNo")
-	private CitizenDetails citizenDetails;
+	private ArEntity citizenDetails;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="ed_trace_i")

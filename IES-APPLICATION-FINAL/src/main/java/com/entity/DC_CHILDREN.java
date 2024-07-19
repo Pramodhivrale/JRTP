@@ -23,7 +23,7 @@ public class DC_CHILDREN
 	
 	@OneToOne
 	@JoinColumn(name = "caseNo")
-	private CitizenDetails citizenDetails;
+	private ArEntity citizenDetails;
 	
 //	  child_id		PK
 //      child_name	
