@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      discovery.locator:
+        enabled: true
+        lowerCaseServiceId: true
+      routes:
+      - id: GreetApi
+        uri: lb://GreetApi-JRTP4
+        predicates:
+        - Path=/greet
+      - id: WelcomeApi
+        uri: lb://Microservices-WelcomeApi-JRTP
+        predicates:
+        - Path=/welcome
+  application:
+    name: Microservices-ApiGateway-JRTP-1
+server:
+  port: 2222
+

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: GreetApi-JRTP4
+  boot:
+    admin:
+      client:
+        url: http://localhost:8083/
+  cloud:
+      compatibility-verifier:
+       enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    
+        
