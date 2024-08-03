@@ -6,6 +6,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\SpringBootCodes\2.JunitTestsparametrizedApp"/>
 			<item value="D:\SpringBootCodes\JunitTestsparametrizedApp\src\test\java\cpm\test\PalindromeTest.java"/>
 			<item value="D:\SpringBootCodes\JunitTest\src\test\java\com\test\CalcuTest.java"/>
 		</list>
@@ -49,6 +50,7 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.junit"/>
 			<item value="JunitMockito"/>
 			<item value="JunitTestsparametrizedApp"/>
 			<item value="Junit"/>
@@ -59,6 +61,7 @@
 			<item value="junitTests"/>
 		</list>
 		<list key="artifactId">
+			<item value="3.JunitException"/>
 			<item value="JunitMockito"/>
 			<item value="JunitTestsparametrizedApp"/>
 			<item value="JunitTest"/>

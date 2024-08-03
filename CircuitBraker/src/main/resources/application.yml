@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: CircuitBraker
+resilience4j:
+  circuitbreaker:
+    instances:
+      fallback:
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        waitDurationInOpenState: 10s
+        failureRateThreshold: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+       
