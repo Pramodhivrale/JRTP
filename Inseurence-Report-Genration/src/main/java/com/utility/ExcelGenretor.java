@@ -67,10 +67,12 @@ public class ExcelGenretor
 			datarowindex++;
 		}
 		
+		//It will create file in folder of application
 		FileOutputStream fileOutputStream=new FileOutputStream(new File("plans.xls"));
 		workbook.write(fileOutputStream);
 		fileOutputStream.close();
 		
+		//It will send file to browser
 		ServletOutputStream outputStream = response.getOutputStream();
 		workbook.write(outputStream);
 		workbook.close();
