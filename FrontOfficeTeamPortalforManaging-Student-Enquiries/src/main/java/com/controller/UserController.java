@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.request.ForgotPassForm;
-import com.request.LoginForm;
-import com.request.SignupForm;
-import com.request.UnlockForm;
+import com.bindings.ForgotPassForm;
+import com.bindings.LoginForm;
+import com.bindings.SignupForm;
+import com.bindings.UnlockForm;
 import com.service.UserServiceImpl;
 
 @Controller
@@ -28,7 +28,6 @@ public class UserController {
 	@PostMapping("/signup")
 	public String addSignUpdata(@ModelAttribute("user") SignupForm form, Model model) {
 		boolean flagvalue = userServiceImpl.signUp(form);
-		System.out.println(flagvalue);
 		if (flagvalue) {
 			model.addAttribute("succ", "Signup successful!");
 		} else {
@@ -88,7 +87,6 @@ public class UserController {
 	@GetMapping("/forgot")
 	public String forgotPwdPage(ForgotPassForm fPassForm,Model model) 
 	{
-		System.out.println(fPassForm);
 		model.addAttribute("user", new ForgotPassForm());
 		return "forgotPwd";
 	}

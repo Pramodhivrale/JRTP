@@ -4,13 +4,13 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bindings.ForgotPassForm;
+import com.bindings.LoginForm;
+import com.bindings.SignupForm;
+import com.bindings.UnlockForm;
 import com.constants.AppConst;
 import com.entity.UserDtlsEntity;
 import com.repo.UserDetailsRepo;
-import com.request.ForgotPassForm;
-import com.request.LoginForm;
-import com.request.SignupForm;
-import com.request.UnlockForm;
 import com.utility.*;
 
 import jakarta.servlet.http.HttpSession;

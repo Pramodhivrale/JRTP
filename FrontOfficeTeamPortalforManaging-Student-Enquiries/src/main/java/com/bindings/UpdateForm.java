@@ -1,4 +1,4 @@
-package com.request;
+package com.bindings;
 
 import lombok.Data;
 

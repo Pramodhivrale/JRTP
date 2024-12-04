@@ -8,14 +8,14 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bindings.EnquiryForm;
+import com.bindings.UpdateForm;
 import com.entity.StudentEnqEntity;
 import com.entity.UserDtlsEntity;
 import com.repo.CourseListRepo;
 import com.repo.EnqstatusRepo;
 import com.repo.StudentEnqRepo;
 import com.repo.UserDetailsRepo;
-import com.request.EnquiryForm;
-import com.request.UpdateForm;
 import com.response.DashBoardResponse;
 import com.response.EnqSearchCreteria;
 
@@ -71,7 +71,7 @@ public class EnquieryserviceImpl implements EnquieryService {
 
 			int enrollCnt = collect.size();
 
-			List<StudentEnqEntity> collect2 = enquiries.stream().filter(e -> e.getEnqStatus().equals("LOAT"))
+			List<StudentEnqEntity> collect2 = enquiries.stream().filter(e -> e.getEnqStatus().equals("LOST"))
 					.collect(Collectors.toList());
 
 			int lostcnt = collect2.size();
@@ -166,7 +166,6 @@ public class EnquieryserviceImpl implements EnquieryService {
 	@Override
 	public List<StudentEnqEntity> filterEnq(Integer id, EnqSearchCreteria creteria) 
 	{
-		System.out.println(creteria);
 		Optional<UserDtlsEntity> byId = userDetailsRepo.findById(id);
 
 		UserDtlsEntity userDtlsEntity = byId.get();
@@ -192,7 +191,6 @@ public class EnquieryserviceImpl implements EnquieryService {
 			return enquiries;
 
 		}
-		System.out.println(enquiries.size());
 		return enquiries;
 	}
 

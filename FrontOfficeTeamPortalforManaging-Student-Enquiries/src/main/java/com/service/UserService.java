@@ -1,9 +1,9 @@
 package com.service;
 
-import com.request.ForgotPassForm;
-import com.request.LoginForm;
-import com.request.SignupForm;
-import com.request.UnlockForm;
+import com.bindings.ForgotPassForm;
+import com.bindings.LoginForm;
+import com.bindings.SignupForm;
+import com.bindings.UnlockForm;
 
 public interface UserService 
 {

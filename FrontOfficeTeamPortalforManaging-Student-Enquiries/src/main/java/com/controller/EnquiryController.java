@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.bindings.EnquiryForm;
+import com.bindings.UpdateForm;
 import com.entity.StudentEnqEntity;
-import com.request.EnquiryForm;
-import com.request.UpdateForm;
 import com.response.DashBoardResponse;
 import com.response.EnqSearchCreteria;
 import com.service.EnquieryserviceImpl;

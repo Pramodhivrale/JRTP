@@ -3,9 +3,9 @@ package com.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.bindings.EnquiryForm;
+import com.bindings.UpdateForm;
 import com.entity.StudentEnqEntity;
-import com.request.EnquiryForm;
-import com.request.UpdateForm;
 import com.response.DashBoardResponse;
 import com.response.EnqSearchCreteria;
 

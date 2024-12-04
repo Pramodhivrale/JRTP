@@ -1,4 +1,4 @@
-package com.request;
+package com.bindings;
 
 public class ForgotPassForm 
 {
